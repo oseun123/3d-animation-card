@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+main {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-image: linear-gradient(25deg, #141e30, #243b55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.card-container {
+  position: relative;
+  color: #fff;
+  width: 440px;
+  height: 650px;
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  backface-visibility: hidden;
+  transition: 0.8s;
+  transform-style: preserve-3d;
+}
+
+.face-1 {
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.05)
+  );
+  transform-origin: right;
+  transform: translateX(0%) rotateY(0deg) perspective(0px);
+}
+
+.face-2 {
+  background-image: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.05)
+  );
+  transform-origin: left;
+  transform: translateX(100%) rotateY(100deg) perspective(1000px);
+}
+.content:hover .face-1 {
+  transform: translateX(-100%) rotateY(-100deg) perspective(1000px);
+}
+.content:hover .face-2 {
+  transform: translateX(0%) rotateY(0deg) perspective(0px);
+}
+.logo {
+  width: 50px;
+  transform: translateZ(40px);
+  transform-style: preserve-3d;
+}
+
+.top-part > h2 {
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  font-family: "Roboto", "san-serif";
+  letter-spacing: 1px;
+  margin: 0.4rem 0 0.6rem;
+  transform: translateZ(50px);
+  transform-style: preserve-3d;
+}
+.shoe-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.shoe-year {
+  color: #eee;
+  font-size: 1.05rem;
+  transform: translateZ(40px);
+  transform-style: preserve-3d;
+}
+.shoe-new {
+  padding: 0.3rem 0.6rem;
+  background-color: #fff;
+  color: rgb(30, 35, 66);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transform: translateZ(40px);
+  transform-style: preserve-3d;
+}
+
+.bottom-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shoe-price {
+  font-weight: 400;
+  font-size: 2.3rem;
+  font-family: "Roboto", "san-serif";
+  display: flex;
+  gap: 0.2rem;
+  transform: translateZ(45px);
+  transform-style: preserve-3d;
+}
+
+.shoe-price span {
+  font-size: 1.4rem;
+}
+.right-arrow {
+  width: 35px;
+  padding-top: 0.3rem;
+}
+.right-arrow img {
+  filter: invert(1);
+  animation: move 0.5s infinite ease alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-5px);
+  }
+
+  to {
+    transform: translateX(5px);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+  font-family: "Roboto", "san-serif";
+  margin-top: 0.5rem;
+}
+
+.wish {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.features {
+  list-style: none;
+  margin: 3rem 0;
+  color: #eee;
+  font-weight: 300;
+}
+.features li {
+  margin-bottom: 0.3rem;
+}
+.color-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.color-wrap > span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.colors {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.color {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: red;
+  cursor: pointer;
+  /* margin-right: 0.6rem; */
+  transition: 0.3s;
+}
+
+.color.blue {
+  border: 4.5px solid #2980b9;
+  background-color: #2980b9;
+}
+.color.black {
+  border: 4.5px solid #333;
+  background-color: #333;
+}
+.color.white {
+  border: 4.5px solid #ccc;
+  background-color: #ccc;
+}
+.color.active {
+  border: 4.5px solid #fff;
+}
+
+.color:hover {
+  transform: scale(1.1);
+}
+
+.buy-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buy {
+  display: inline-block;
+  padding: 0.5rem 1.7rem;
+  background-color: #2980b9;
+  border-radius: 4px;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+.buy:hover {
+  background-color: #246997;
+}
+.buy i {
+  font-size: 0.9rem;
+}
+
+.shoe-image-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  /* background-color: red; */
+  pointer-events: none;
+}
+
+.shoe-img {
+  position: absolute;
+  width: 130%;
+  height: 100%;
+  /* background: blue; */
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-45%, -55%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  animation: float 2s alternate ease-in-out infinite;
+  transition: 0.65s;
+}
+@keyframes float {
+  0% {
+    transform: translateX(-5px) translateY(-5px);
+  }
+  100% {
+    transform: translateX(5px) translateY(5px);
+  }
+}
+.shoe {
+  filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+  transform: rotate(-30deg);
+  transition: 0.65s;
+}
+
+.content:hover .shoe-img {
+  width: 100%;
+}
+.content:hover .shoe-img .shoe {
+  transform: rotate(-17deg) translateY(60px);
+}
